@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Photo</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users.data">
+            <td>{{ user.id }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td><img src="{{user.avatar}}"></td>
+        </tr>
+    </tbody>
+</table>
