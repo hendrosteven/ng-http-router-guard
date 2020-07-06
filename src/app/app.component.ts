@@ -13,4 +13,17 @@ export class AppComponent{
   ngOnInit(){
     this.router.navigate(['home']);
   }
+
+  isLogin(){
+    if(localStorage.getItem('token')){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  onLogout(){
+    localStorage.clear();
+    this.router.navigate(['home']);
+  }
 }

@@ -1,1 +1,12 @@
-<p>input works!</p>
+<h3>Input User</h3>
+<div class="mb-3">
+  <label for="name" class="form-label">Full Name</label>
+  <input type="text" class="form-control" placeholder="Full Name" [(ngModel)] = 'name'>
+</div>
+<div class="mb-3">
+  <label for="job" class="form-label">Job</label>
+  <input type="text" class="form-control" placeholder="Job" [(ngModel)] = 'job'>
+</div>
+<p>
+    <button type="button" class="btn btn-secondary" (click)="onSaveUser()">Save</button>
+</p>

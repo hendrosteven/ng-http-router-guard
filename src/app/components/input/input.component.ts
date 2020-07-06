@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-input',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
+  name: string = '';
+  job: string = '';
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  onSaveUser(){
+    this.userService.saveUser(this.name, this.job).subscribe((result)=>{
+      alert('Data saved!');
+      this.name = '';
+      this.job = '';
+    })
   }
 
 }
